@@ -1,0 +1,15 @@
+body {
+	background: #efefef;
+}
+
+h1 {
+	font: 48px bold "Trebuchet MS";
+}
+
+#main .test {
+	background-color: red;
+	width: 100px;
+	position: absolute;
+	top: 75%;
+	right: 25%;
+}
