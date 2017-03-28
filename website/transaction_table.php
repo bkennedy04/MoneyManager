@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$query1 = "SELECT transaction_amount, category, date, sign FROM transactions";
+$query1 = "SELECT transaction_amount, category, date, sign FROM transactions ORDER BY date DESC";
 $result1 = $conn->query($query1);
 $var1;
 $var2;
