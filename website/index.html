@@ -21,6 +21,12 @@
         </table>
       </div>
     </div>
+	<div class="panel panel-default">
+		<div class="panel-heading">Category Spending Breakdown</div>
+		<div class="panel-body" style="text-align: center">
+			<canvas id="categories_chart" height="200px"></canvas>
+		</div>
+	</div>
   </div>
   <div class="col-xs-6" style="padding: 0">
     <div class="panel panel-default">
@@ -45,27 +51,56 @@
     <div class="panel panel-default">
 		<div class="panel-heading">Account Balance Over Time</div>
       <div class="panel-body">
-        <canvas id="myChart" height="200px"></canvas>
-        <script>
-        var ctx = document.getElementById("myChart");
-
-        var myLineChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ["January", "Februrary", "March", "April"],
-                datasets: [{
-                    label: 'Balance',
-                    data: [-500, 1500, 1250, 750, 2000],
-                    fill: false
-                }]
-            },
-            options: {
-              fill: false,
-            }
-        });
-        </script>
+        <canvas id="balance_chart" height="200px"></canvas>
       </div>
     </div>
   </div>
 </body>
+
+<script>
+var ctx = document.getElementById("balance_chart");
+
+var myLineChart = new Chart(ctx, {
+	type: 'line',
+	data: {
+		labels: ["January", "Februrary", "March", "April"],
+		datasets: [{
+			label: 'Balance',
+			data: [-500, 1500, 1250, 750, 2000],
+			fill: false
+		}]
+	},
+	options: {
+	  fill: false,
+	}
+});
+
+var ctx = document.getElementById("categories_chart");
+
+new Chart(ctx,{
+				type:"pie",
+		  data: {
+		labels: <?php include "category_labels.php"; ?>,
+		datasets: [{
+				data: <?php include "firstphp.php"; ?>,
+				backgroundColor: [
+					"#FF0000",
+					"#0000FF",
+					"#00CC11",
+					"#000000"
+				],
+
+			}]
+	},
+			options: {
+				animation:{
+				animateScale:true
+			},
+			legend: {
+			  display: true
+			}
+	}
+});
+</script>
+
 </html>
