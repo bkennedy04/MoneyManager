@@ -63,10 +63,17 @@ var ctx = document.getElementById("balance_chart");
 var myLineChart = new Chart(ctx, {
 	type: 'line',
 	data: {
+<<<<<<< HEAD
 		labels: <?php include "dates.php";?>,
 		datasets: [{
 			label: 'Balance',
 			data: <?php include "balances.php";?>,
+=======
+		labels: ["January", "Februrary", "March", "April"],
+		datasets: [{
+			label: 'Balance',
+			data: [-500, 1500, 1250, 750, 2000],
+>>>>>>> origin/master
 			fill: false
 		}]
 	},
