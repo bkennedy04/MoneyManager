@@ -1,9 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "brooke";
-$password = "root";
-$dbname = "Money_Manager";
+include "connect_db.php";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
