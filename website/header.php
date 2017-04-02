@@ -46,5 +46,9 @@
 
         </li>
       </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><?php include "account_balance.php"; ?></a></li>
+        </li>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </nav>

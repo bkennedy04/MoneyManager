@@ -21,10 +21,11 @@ if ($result1->num_rows > 0) {
 ?>
 
 
-        Goal <?php echo $count .": ". $row["amount"] ." by ". $row["end_date"] ." for ". $row["description"]; ?>
+        Goal <?php echo $count .": ". $row["description"]; ?>
+		<?php echo "($" . $row["amount"] ." by ". $row["end_date"] . ")";?>
         <div class="progress">
           <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-            <?php echo $percentage ?>%
+            <?php echo round($percentage, 2) ?>%
           </div>
         </div>
 <?php
