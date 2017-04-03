@@ -5,7 +5,7 @@
       <div class="panel-heading">Enter Transaction</div>
       <div class="panel-body">
 
-		<form>
+		<form action="transaction_form_processing.php" method="post">
 			Transaction Amount:<br><input type="number" name="amount"><br>
 			Description:<br><input type="text" name="description"><br>
 			Category:<br><input type="text" name="category"><br>
