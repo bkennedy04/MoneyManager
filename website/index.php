@@ -78,7 +78,7 @@ new Chart(ctx,{
 		  data: {
 		labels: <?php include "category_labels.php"; ?>,
 		datasets: [{
-				data: <?php include "firstphp.php"; ?>,
+				data: <?php include "pie_data.php"; ?>,
 				backgroundColor: [
 					"#FF0000",
 					"#0000FF",
