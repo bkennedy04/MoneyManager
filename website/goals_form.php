@@ -6,7 +6,7 @@
       <div class="panel-body">
 
 		<form action="goals_form_processing.php" method="post">
-			Amount:<br><input type="number" name="amount"><br>
+			Amount:<br><input type="number" step="0.01" name="amount"><br>
 			Description:<br><input type="text" name="description"><br>
 			End date:<br><input type="date" name="end_date"><br>
 			<br><input type="submit" value="Submit">
