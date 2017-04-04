@@ -12,6 +12,9 @@
 
   <!-- Import ChartJS -->
   <script src="Chart.min.js"></script>
+  
+    <!-- Set favicon -->
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -27,8 +30,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="goals_form.php">Goals</a></li>
-        <li><a href="transaction_form.php">Transactions</a></li>
+        <li><a href="goals_form.php">Add Goals</a></li>
+        <li><a href="transaction_form.php">Add Transactions</a></li>
+		<li><a href="account_balance_form.php">Update Account Balance</a></li>
 
         <!--
         <li class="dropdown">
