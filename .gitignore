@@ -1,1 +1,3 @@
 website/connect_db.php
+website/create_account.php
+website/verify_account.php
