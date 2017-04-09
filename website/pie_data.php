@@ -1,7 +1,8 @@
 <?php
+
 include "connect_db.php";
 
-$query0 = "SELECT DISTINCT category FROM transactions WHERE sign LIKE '-'";
+$query0 = "SELECT DISTINCT category FROM transactions WHERE sign LIKE '-' AND user_id = ".$_SESSION["id"];
 $result0 = $conn->query($query0);
 
 echo "[";

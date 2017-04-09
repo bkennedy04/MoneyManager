@@ -2,7 +2,6 @@
 <html>
 
 <?php
-session_start();
 include "header.php"; ?>
 
   <div class="col-xs-6" style="padding-left: 0">

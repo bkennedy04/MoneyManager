@@ -1,7 +1,8 @@
 <?php
+
 include "connect_db.php";
 
-$query0 = "SELECT account_balance FROM transactions WHERE time_added = (SELECT MAX(time_added) FROM transactions)";
+$query0 = "SELECT account_balance FROM transactions WHERE time_added = (SELECT MAX(time_added) FROM transactions) AND user_id = ".$_SESSION["id"];
 $result0 = $conn->query($query0);
 
 

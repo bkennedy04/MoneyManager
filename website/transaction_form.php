@@ -1,4 +1,7 @@
-<?php include "header.php";?>
+<?php
+session_start();
+include "header.php";
+?>
 <html>
 <div class="col-xl-12" style="padding-left: 0">
     <div class="panel panel-default">

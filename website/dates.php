@@ -1,8 +1,9 @@
 <?php
+
 include	"connect_db.php";
 
-$query1="SELECT date from transactions order by date";
-$query2="SELECT account_balance from transactions";
+$query1="SELECT date FROM transactions WHERE user_id = ".$_SESSION["id"]." ORDER BY date";
+$query2="SELECT account_balance from transactions WHERE user_id = ".$_SESSION["id"];
 $result1=$conn->query($query1);
 $result2=$conn->query($query2);
 

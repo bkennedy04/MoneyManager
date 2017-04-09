@@ -30,29 +30,33 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
+		<!--
         <li><a href="goals_form.php">Add Goals</a></li>
         <li><a href="transaction_form.php">Add Transactions</a></li>
 		<li><a href="account_balance_form.php">Update Account Balance</a></li>
+		-->
 
-        <!--
+        
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Update Account<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
+            <li><a href="goals_form.php">Add Goals</a></li>
+            <li><a href="transaction_form.php">Add Transactions</a></li>
+            <li><a href="account_balance_form.php">Update Account Balance</a></li>
+            <!--
+			<li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
+			-->
           </ul>
-        -->
+        
 
         </li>
       </ul>
 	  <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Account Balance: <b>$<?php include "account_balance.php"; ?></b></a></li>
-        </li>
+		<li><a href="#">Account Balance: <b>$<?php include "account_balance.php"; ?></b></a></li>
+        <li><a href="logout.php">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
