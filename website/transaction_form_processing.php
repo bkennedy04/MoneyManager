@@ -21,13 +21,19 @@ if ($result0->num_rows > 0) {
 		}
 }
 
-$current_balance = $current_balance - $_POST["amount"];
+if($sign == '+'){
+	$current_balance += $_POST["amount"];
+}
+else{
+	$current_balance -= $_POST["amount"];
+}
 
 $sql1 = "INSERT INTO transactions (account_balance, transaction_amount, category, description, date, sign, user_id) VALUES ('".$current_balance."', '".$_POST["amount"]."', '".$_POST["category"]."', '".$_POST["description"]."', '".$_POST["date"]."', '".$sign."','".$_SESSION["id"]."')";
 
 if ($conn->query($sql1) === TRUE) {
     echo "Record updated successfully";
-} else {
+} 
+else {
     echo "Error updating record: " . $conn->error;
 }
 

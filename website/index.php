@@ -14,6 +14,7 @@ include "header.php"; ?>
             <tr>
               <th>Change</th>
               <th>Category</th>
+			  <th>Description</th>
               <th>Date</th>
             </tr>
           </thead>

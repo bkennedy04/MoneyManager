@@ -7,7 +7,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$query1 = "SELECT transaction_amount, category, date, sign FROM transactions WHERE transaction_amount IS NOT NULL AND user_id = ".$_SESSION["id"]." ORDER BY date DESC";
+$query1 = "SELECT transaction_amount, category, date, sign, description FROM transactions WHERE transaction_amount IS NOT NULL AND user_id = ".$_SESSION["id"]." ORDER BY date DESC";
 $result1 = $conn->query($query1);
 $var1;
 $var2;
@@ -30,6 +30,7 @@ $var2;
 	        <tr class="<?php echo $var1; ?>">
               <td><span class="<?php echo $var2;?>" aria-hidden="true"><?php echo $row["transaction_amount"]; ?> </span></td>
               <td><?php echo $row["category"];?></td>
+			  <td><?php echo $row["description"];?></td>
               <td><?php echo $row["date"];?></td>
             </tr>
 

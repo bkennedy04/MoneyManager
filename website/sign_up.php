@@ -4,7 +4,7 @@ session_start();
 <html>
 <div class="col-xl-12" style="padding-left: 0">
     <div class="panel panel-default">
-      <div class="panel-heading">Sign up for a Money Manager account!</div>
+      <div class="panel-heading"><h3>Sign up for a Money Manager account:</h3></div>
       <div class="panel-body">
 
 		<form action="sign_up_processing.php" method="post"><br>

@@ -20,6 +20,8 @@ include "header.php";
 				<option value="Entertainment">Entertainment</option>
 				<option value="Emergency Fund">Emergency Fund</option>
 				<option value="Savings">Savings</option>
+				<option value="Income">Income</option>
+				<option value="Other">Other</option>
 				</select>
 				<br><br>
 			Transaction Date:<br><input type="date" name="date" required><br><br>
