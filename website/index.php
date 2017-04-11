@@ -111,7 +111,7 @@ var ctx = document.getElementById("bar_chart");
 new Chart(ctx, {
     type: 'bar',
     data: {
-		labels: ["January", "February"],
+		labels: <?php include "dates_bar.php"; ?>,
 		datasets: [
 			{
 				label: "Expenses",
@@ -124,7 +124,7 @@ new Chart(ctx, {
 					'rgba(54, 162, 235, 0.2)'
 				],
 				borderWidth: 1,
-				data: [65, 59],
+				data: <?php include "data_expenses_bar.php"; ?>,
 			},
 			{
 				label: "Profits",
@@ -136,7 +136,7 @@ new Chart(ctx, {
 					'rgba(255, 99, 132, 0.2)'
 				],
 				borderWidth: 1,
-				data: [100, 30],
+				data: <?php include "data_profits_bar.php"; ?>,
 			}
 		]
 	},
