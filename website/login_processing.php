@@ -13,7 +13,7 @@ if ($result0->num_rows > 0) {
 		 
 			session_start();
 			$_SESSION["id"] = $row["user_id"];
-			include "home.php";
+			include "index.php";
 			
 	
 		}

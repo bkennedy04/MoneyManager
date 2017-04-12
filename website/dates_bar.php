@@ -1,7 +1,8 @@
 <?php
 //session_start();
 include "connect_db.php";
-$query1="SELECT MONTHNAME(date) AS MonthName, YEAR(date) AS Year FROM transactions WHERE user_id = ".$_SESSION["id"]." AND transaction_amount IS NOT NULL GROUP BY MonthName";
+
+$query1="SELECT MONTHNAME(date) AS MonthName, YEAR(date) AS Year FROM transactions WHERE user_id = ".$_SESSION["id"]." AND transaction_amount IS NOT NULL GROUP BY MonthName, MonthName(date) ORDER BY MONTH(date)";
 //$query1="SELECT {fn MONTHNAME(date)} AS MonthName, YEAR(date) AS Year FROM transactions WHERE user_id = ".$_SESSION["id"]." AND (YEAR(date)=@year) GROUP BY {fn MONTHNAME(date)}, YEAR(date)";
 $result1=$conn->query($query1);
 
