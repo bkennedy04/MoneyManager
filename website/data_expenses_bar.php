@@ -1,8 +1,8 @@
 <?php
 include "connect_db.php";
-session_start();
+//session_start();
 
-$query1 = "SELECT SUM(transaction_amount) AS totals, MONTHNAME(date) AS months FROM transactions WHERE user_id =" .$_SESSION["id"]." AND sign="-" GROUP BY months";
+$query1 = "SELECT SUM(transaction_amount) AS totals, MONTHNAME(date) AS months FROM transactions WHERE user_id =" .$_SESSION["id"]." AND sign=\"-\" GROUP BY months";
 //$query1="SELECT SUM(transaction_amount) FROM transactions WHERE user_id = ".$_SESSION["id"]." AND sign=\"-\" GROUP BY {fn MONTHNAME(date)}, YEAR(date)";
 $result1=$conn->query($query1);
 

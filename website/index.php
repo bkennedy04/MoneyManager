@@ -115,11 +115,7 @@ new Chart(ctx, {
 		datasets: [
 			{
 				label: "Expenses",
-				backgroundColor: [
-					'rgba(255, 99, 132, 0.2)',
-					'rgba(255, 99, 132, 0.2)'
-
-				],
+				backgroundColor: <?php include "expense_background.php";?>,
 				borderColor: [
 					'rgba(54, 162, 235, 0.2)'
 				],
@@ -128,10 +124,7 @@ new Chart(ctx, {
 			},
 			{
 				label: "Profits",
-				backgroundColor: [
-					'rgba(75, 192, 192, 0.2)',
-					'rgba(75, 192, 192, 0.2)'
-				],
+				backgroundColor: <?php include "profit_background.php";?>,
 				borderColor: [
 					'rgba(255, 99, 132, 0.2)'
 				],
