@@ -27,7 +27,7 @@ session_start();
     <div class="container ">
 
         <form class="form-signin" action="sign_up_processing.php" method="post">
-          <h3 class="form-signin-heading">Sign up for a Money Manager account:</h3>
+          <h3 class="form-signin-heading" style="color: #000000; text-shadow: none">Sign up for a Money Manager account:</h3>
           <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
           <input type="password" name="password" class="form-control" placeholder="Password" required>
           <button class="btn btn-lg btn-primary btn-block" type="submit">Create account</button>
