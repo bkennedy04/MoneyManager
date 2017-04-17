@@ -95,7 +95,8 @@ new Chart(ctx,{
 					"#ff3399",
 					"#ff9933",
 					"#33ccff",
-					"#990000"
+					"#990000",
+					"#FFD700"
 				],
 
 			}]
@@ -110,7 +111,7 @@ new Chart(ctx,{
 	}
 });
 
-var ctx = document.getElementById("bar_chart");
+var ctx = document.getElementById("bar_chart").getContext("2d");
 
 new Chart(ctx, {
     type: 'bar',
@@ -140,10 +141,13 @@ new Chart(ctx, {
     options:  {
         scales: {
             xAxes: [{
-                stacked: true
+                stacked: false
             }],
             yAxes: [{
-                stacked: true
+                stacked: false,
+				ticks: {
+					beginAtZero: true
+				}
             }]
         }
     }

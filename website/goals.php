@@ -34,7 +34,7 @@ if ($result1->num_rows > 0) {
 	}
 }
 else{
-	echo "0 results";
+	echo "No goals";
 }
 
 ?>
