@@ -10,7 +10,7 @@ $result0 = $conn->query($sql0);
 			
 			if($_POST["username"] == $row["username"]){
 				include "sign_up.php";
-				echo "<span style=\"color:#ff0000;text-align:center;\">User name already taken. Try again!</span>";
+				echo "<div class=\"container\"><div style=\"color:#ff0000;text-align:center; margin: 0 auto\">User name already taken. Try again!</div></div>";
 				exit();
 			}
 			else{

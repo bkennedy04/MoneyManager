@@ -56,6 +56,7 @@
       </ul>
 	  <ul class="nav navbar-nav navbar-right">
 		<li><a href="#">Account Balance: <b>$<?php include "account_balance.php"; ?></b></a></li>
+		<li><a href="help.php">Help</a></li>
         <li><a href="logout.php">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
