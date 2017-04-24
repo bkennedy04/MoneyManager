@@ -6,5 +6,6 @@ if(!isset($_SESSION)) {
 
 include "header.php";
 
-echo "You have reached the help page!";
+//echo "You have reached the help page!";
 ?>
+<embed src="img/usermanual.pdf" width="100%" height="100%" />
