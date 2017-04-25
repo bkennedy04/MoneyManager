@@ -23,13 +23,13 @@
   <nav class="navbar navbar-default">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">Money Manager</a>
+      <a class="navbar-brand" href="home.php">Money Manager</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="home.php">Home <span class="sr-only">(current)</span></a></li>
 		<!--
         <li><a href="goals_form.php">Add Goals</a></li>
         <li><a href="transaction_form.php">Add Transactions</a></li>

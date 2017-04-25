@@ -1,160 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href=".img/favicon.ico">
 
-<?php
-
-if(!isset($_SESSION)) { 
-    session_start(); 
-} 
-
-include "header.php"; ?>
-
-  <div class="col-xs-6" style="padding-left: 0">
-    <div class="panel panel-default">
-      <div class="panel-heading">Transaction History</div>
-      <div class="panel-body">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Change</th>
-              <th>Category</th>
-			  <th>Description</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-			<?php include "transaction_table.php"; ?>
-          </tbody>
-        </table>
-      </div>
-    </div>
-	<div class="panel panel-default">
-		<div class="panel-heading">Category Spending Breakdown</div>
-		<div class="panel-body" style="text-align: center">
-			<canvas id="categories_chart" height="200px"></canvas>
-		</div>
-	</div>
-  </div>
-  <div class="col-xs-6" style="padding: 0">
-    <div class="panel panel-default">
-      <div class="panel-heading">Goals</div>
-      <div class="panel-body">
-        <?php include "goals.php"; ?>
-      </div>
-    </div>
+    <title>Signin to Money Manager</title>
 	
-    <div class="panel panel-default">
-		<div class="panel-heading">Account Balance Over Time</div>
-      <div class="panel-body">
-        <canvas id="balance_chart" height="200px"></canvas>
+	    <!-- Set favicon -->
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <div class="container ">
+      <div id="bar" class="imgcontainer">
+       <!-- <img src="img/banking.jpg" alt="Avatar" class="avatar">-->
+      <div class="row">
+      <div class="col-sm-8">
+        <div class="input-group">
+          <h1>Welcome to Money Manager!</h1>
+          <h4>Keep track of your money by visualizing your transactions.</h4>
+        </div>
       </div>
-    </div>
-	
-	<div class="panel panel-default">
-		<div class="panel-heading">Profits vs. Expenditures</div>
-      <div class="panel-body">
-        <canvas id="bar_chart" height="200px"></canvas>
+      <div class="col-sm-4">
+        <div class="input-group">
+        <form class="form-signin" action="login_processing.php" method="post">
+          <h3 class="form-signin-heading">Please sign in</h3>
+          <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
+          <input type="password" name="password" class="form-control" placeholder="Password" required>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <div style="margin-top: 10px"><a href="sign_up.php" class="btn btn-lg btn-success btn-block" role="button">Register for an account</a></div>
+        </form>
+        </div>
       </div>
-    </div>
-	
-  </div>
-</body>
+      </div>
+      </div>
+    </div> <!-- /container -->
 
-<script>
-var ctx = document.getElementById("balance_chart");
-
-var myLineChart = new Chart(ctx, {
-	type: 'line',
-	data: {
-		labels: <?php include "dates.php";?>,
-		datasets: [{
-			label: 'Balance',
-			data: <?php include "balances.php";?>,
-			fill: false
-		}]
-	},
-	options: {
-	  fill: false,
-	}
-});
-
-var ctx = document.getElementById("categories_chart");
-
-new Chart(ctx,{
-				type:"pie",
-		  data: {
-		labels: <?php include "category_labels.php"; ?>,
-		datasets: [{
-				data: <?php include "pie_data.php"; ?>,
-				backgroundColor: [
-					"#FF0000",
-					"#0000FF",
-					"#00CC11",
-					"#000000",
-					"#ffff00",
-					"#ff3399",
-					"#ff9933",
-					"#33ccff",
-					"#990000",
-					"#FFD700"
-				],
-
-			}]
-	},
-			options: {
-				animation:{
-				animateScale:true
-			},
-			legend: {
-			  display: true
-			}
-	}
-});
-
-var ctx = document.getElementById("bar_chart").getContext("2d");
-
-new Chart(ctx, {
-    type: 'bar',
-    data: {
-		labels: <?php include "dates_bar.php"; ?>,
-		datasets: [
-			{
-				label: "Expenses",
-				backgroundColor: <?php include "expense_background.php";?>,
-				borderColor: [
-					'rgba(54, 162, 235, 0.2)'
-				],
-				borderWidth: 1,
-				data: <?php include "data_expenses_bar.php"; ?>,
-			},
-			{
-				label: "Profits",
-				backgroundColor: <?php include "profit_background.php";?>,
-				borderColor: [
-					'rgba(255, 99, 132, 0.2)'
-				],
-				borderWidth: 1,
-				data: <?php include "data_profits_bar.php"; ?>,
-			}
-		]
-	},
-    options:  {
-        scales: {
-            xAxes: [{
-                stacked: false
-            }],
-            yAxes: [{
-                stacked: false,
-				ticks: {
-					beginAtZero: true
-				}
-            }]
-        }
-    }
-});
-</script>
-<?php
-
-
-?>
+  </body>
 </html>

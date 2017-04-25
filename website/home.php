@@ -2,6 +2,11 @@
 <html>
 
 <?php
+
+if(!isset($_SESSION)) { 
+    session_start(); 
+} 
+
 include "header.php"; ?>
 
   <div class="col-xs-6" style="padding-left: 0">
@@ -90,7 +95,8 @@ new Chart(ctx,{
 					"#ff3399",
 					"#ff9933",
 					"#33ccff",
-					"#990000"
+					"#990000",
+					"#FFD700"
 				],
 
 			}]
@@ -105,47 +111,43 @@ new Chart(ctx,{
 	}
 });
 
-var ctx = document.getElementById("bar_chart");
+var ctx = document.getElementById("bar_chart").getContext("2d");
 
 new Chart(ctx, {
     type: 'bar',
     data: {
-		labels: ["January", "February"],
+		labels: <?php include "dates_bar.php"; ?>,
 		datasets: [
 			{
 				label: "Expenses",
-				backgroundColor: [
-					'rgba(255, 99, 132, 0.2)',
-					'rgba(255, 99, 132, 0.2)'
-
-				],
+				backgroundColor: <?php include "expense_background.php";?>,
 				borderColor: [
 					'rgba(54, 162, 235, 0.2)'
 				],
 				borderWidth: 1,
-				data: [65, 59],
+				data: <?php include "data_expenses_bar.php"; ?>,
 			},
 			{
 				label: "Profits",
-				backgroundColor: [
-					'rgba(75, 192, 192, 0.2)',
-					'rgba(75, 192, 192, 0.2)'
-				],
+				backgroundColor: <?php include "profit_background.php";?>,
 				borderColor: [
 					'rgba(255, 99, 132, 0.2)'
 				],
 				borderWidth: 1,
-				data: [100, 30],
+				data: <?php include "data_profits_bar.php"; ?>,
 			}
 		]
 	},
     options:  {
         scales: {
             xAxes: [{
-                stacked: true
+                stacked: false
             }],
             yAxes: [{
-                stacked: true
+                stacked: false,
+				ticks: {
+					beginAtZero: true
+				}
             }]
         }
     }

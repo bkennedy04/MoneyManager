@@ -7,7 +7,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$query1 = "SELECT transaction_amount, category, date, sign, description FROM transactions WHERE transaction_amount IS NOT NULL AND user_id = ".$_SESSION["id"]." ORDER BY date DESC";
+$query1 = "SELECT transaction_amount, category, date, sign, description FROM transactions WHERE transaction_amount IS NOT NULL AND user_id = ".$_SESSION["id"]." ORDER BY date DESC, time_added DESC";
 $result1 = $conn->query($query1);
 $var1;
 $var2;
